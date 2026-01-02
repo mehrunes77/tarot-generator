@@ -14,56 +14,104 @@ const cardDescription = document.getElementById('cardDescription');
 // Find the paragraph with id "cardDescription" and store it
 
 
-// Function to generate a random tarot card
-function generateCard() {
-    // Function definition: runs when button is clicked
+// Function to shuffle through random cards with animation
+function shuffleCards() {
+    // Function that creates a shuffling effect
     
-    // Generate a random number between 0 and the total number of cards
-    const randomIndex = Math.floor(Math.random() * tarotCards.length);
-    /* 
-    Explanation:
-    - Math.random() gives a decimal between 0 and 0.999...
-    - Multiply by tarotCards.length (22) to get 0-21.999...
-    - Math.floor() rounds down to get a whole number: 0, 1, 2... 21
-    - This ensures we get a valid card index
-    */
+    // Disable the button while shuffling
+    generateBtn.disabled = true;
+    /* Prevent clicking multiple times during shuffle */
     
-    // Get the card object at the random index from the tarotCards array
-    const selectedCard = tarotCards[randomIndex];
-    /* Using the random number, we select a card from our data array */
+    // Change button text to show it's shuffling
+    generateBtn.textContent = '🔄 Shuffling...';
     
-    // Update the image element to show the selected card's image
-    cardImage.src = selectedCard.image;
-    /* 
-    The src attribute controls what image is displayed.
-    We're setting it to the image path from the card data.
-    */
+    // Number of times to change the card during shuffle (faster = more dramatic)
+    const shuffleCount = 20;
+    /* We'll show 20 different random cards during the shuffle */
     
-    // Update the card name heading to show the selected card's name
-    cardName.textContent = selectedCard.name;
-    /* textContent sets the text that appears on the page */
+    // Duration of the entire shuffle in milliseconds
+    const shuffleDuration = 5000;
+    /* 5 seconds = 5000 milliseconds */
     
-    // Update the description to show the selected card's description
-    cardDescription.textContent = selectedCard.description;
-    /* This updates the paragraph text with the card's meaning */
+    // Time between each card flip during shuffle
+    const timeBetweenFlips = shuffleDuration / shuffleCount;
+    /* Divide 5 seconds by 20 flips to get time per flip */
     
-    // Console logging (optional - for debugging)
-    console.log(`Generated card: ${selectedCard.name}`);
-    /* This sends a message to the browser console for debugging */
+    // Loop counter for the shuffle effect
+    let currentFlip = 0;
+    /* Starts at 0, counts up to shuffleCount */
+    
+    // Create an interval that changes cards repeatedly
+    const shuffleInterval = setInterval(() => {
+        // Each time this runs, show a random card
+        
+        // Generate random index
+        const randomIndex = Math.floor(Math.random() * tarotCards.length);
+        
+        // Get the random card
+        const randomCard = tarotCards[randomIndex];
+        
+        // Update image
+        cardImage.src = randomCard.image;
+        
+        // Update name
+        cardName.textContent = randomCard.name;
+        
+        // Update description
+        cardDescription.textContent = randomCard.description;
+        
+        // Increment the flip counter
+        currentFlip++;
+        /* Count how many flips we've done */
+    }, timeBetweenFlips);
+    /* This runs every (timeBetweenFlips) milliseconds */
+    
+    // After 5 seconds, stop the shuffle and show final card
+    setTimeout(() => {
+        // This runs after 5000 milliseconds (5 seconds)
+        
+        // Stop the shuffling interval
+        clearInterval(shuffleInterval);
+        /* clearInterval stops the repeated function from running */
+        
+        // Generate the final card with a fresh random number
+        const finalIndex = Math.floor(Math.random() * tarotCards.length);
+        /* Use Math.random() one more time for the final card */
+        
+        const finalCard = tarotCards[finalIndex];
+        
+        // Display the final card
+        cardImage.src = finalCard.image;
+        cardName.textContent = finalCard.name;
+        cardDescription.textContent = finalCard.description;
+        
+        // Re-enable the button
+        generateBtn.disabled = false;
+        /* User can now click again */
+        
+        // Change button text back to normal
+        generateBtn.textContent = '🔮 Generate Card';
+        
+        // Log final card to console
+        console.log(`Final card: ${finalCard.name}`);
+    }, shuffleDuration);
+    /* shuffleDuration = 5000 milliseconds */
 }
 
 
 // Add an event listener to the button
-generateBtn.addEventListener('click', generateCard);
+generateBtn.addEventListener('click', shuffleCards);
 /*
 Explanation:
 - addEventListener means "listen for an event"
 - 'click' means "when the button is clicked"
-- generateCard is the function to run when clicked
-- So this line means: "When the button is clicked, run generateCard()"
+- shuffleCards is the function to run when clicked
+- So this line means: "When the button is clicked, run shuffleCards()"
 */
 
 
-// Optional: Generate a card automatically when the page first loads
-generateCard();
-/* This shows a card as soon as the user opens the page */
+// Do NOT auto-generate a card on page load
+/* 
+The landing page now shows an empty card display until the user clicks the button.
+This makes the experience more interactive and mysterious.
+*/
