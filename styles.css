@@ -15,11 +15,8 @@
 
 /* Style the body/background */
 body {
-    font-family: 'Courier New', monospace;
-    /* Monospace font for sharp, technical feel */
-    
-    background: #0a0a0a;
-    /* Pure black background */
+    font-family: 'Courier New', monospace !important;
+    background: #0a0a0a !important;
     
     min-height: 100vh;
     /* Make background take up at least full screen height */
@@ -39,11 +36,8 @@ body {
 
 /* Style the main container */
 .container {
-    background: #1a1a1a;
-    /* Dark gray background */
-    
-    border: 2px solid #ffffff;
-    /* Sharp white border, no rounding */
+    background: #1a1a1a !important;
+    border: 2px solid #ffffff !important;
     
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     /* Subtle white glow */
@@ -78,14 +72,9 @@ h1 {
 
 /* Style the generate button */
 .generate-btn {
-    background: #000000;
-    /* Black background */
-    
-    color: #ffffff;
-    /* White text color */
-    
-    border: 2px solid #ffffff;
-    /* Sharp white border */
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
     
     padding: 15px 30px;
     /* Add spacing inside button */
@@ -108,11 +97,8 @@ h1 {
 
 /* Style the button when hovering over it */
 .generate-btn:hover {
-    background: #ffffff;
-    /* Invert colors on hover */
-    
-    color: #000000;
-    /* Black text on hover */
+    background: #ffffff !important;
+    color: #000000 !important;
 }
 
 /* Style the button when it's clicked */
