@@ -18,12 +18,17 @@ const cardDescription = document.getElementById('cardDescription');
 function shuffleCards() {
     // Function that creates a shuffling effect
     
+    // Safety check: prevent multiple clicks
+    if (generateBtn.disabled) {
+        return;
+    }
+    
     // Disable the button while shuffling
     generateBtn.disabled = true;
     /* Prevent clicking multiple times during shuffle */
     
     // Change button text to show it's shuffling
-    generateBtn.textContent = '🔄 Shuffling...';
+    generateBtn.textContent = 'SHUFFLING...';
     
     // Number of times to change the card during shuffle (faster = more dramatic)
     const shuffleCount = 20;
@@ -90,7 +95,7 @@ function shuffleCards() {
         /* User can now click again */
         
         // Change button text back to normal
-        generateBtn.textContent = '🔮 Generate Card';
+        generateBtn.textContent = 'GENERATE CARD';
         
         // Log final card to console
         console.log(`Final card: ${finalCard.name}`);

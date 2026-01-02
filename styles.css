@@ -1,4 +1,5 @@
 /* CSS file for styling the tarot generator website */
+/* Dark Thoth Deck Theme */
 
 /* Set default styles for entire page */
 * {
@@ -14,11 +15,11 @@
 
 /* Style the body/background */
 body {
-    font-family: 'Arial', sans-serif;
-    /* Set the font type for text */
+    font-family: 'Courier New', monospace;
+    /* Monospace font for sharp, technical feel */
     
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    /* Create a purple gradient background */
+    background: #0a0a0a;
+    /* Pure black background */
     
     min-height: 100vh;
     /* Make background take up at least full screen height */
@@ -38,14 +39,14 @@ body {
 
 /* Style the main container */
 .container {
-    background: white;
-    /* White background for the card */
+    background: #1a1a1a;
+    /* Dark gray background */
     
-    border-radius: 20px;
-    /* Round the corners */
+    border: 2px solid #ffffff;
+    /* Sharp white border, no rounding */
     
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    /* Add shadow for depth */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    /* Subtle white glow */
     
     padding: 40px;
     /* Add space inside the container */
@@ -62,26 +63,29 @@ body {
 
 /* Style the main title */
 h1 {
-    color: #667eea;
-    /* Purple color matching background */
+    color: #ffffff;
+    /* White text */
     
     margin-bottom: 30px;
     /* Add space below the title */
     
     font-size: 2.5em;
     /* Large font size */
+    
+    letter-spacing: 2px;
+    /* Add spacing between letters */
 }
 
 /* Style the generate button */
 .generate-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    /* Same purple gradient as background */
+    background: #000000;
+    /* Black background */
     
-    color: white;
+    color: #ffffff;
     /* White text color */
     
-    border: none;
-    /* Remove default button border */
+    border: 2px solid #ffffff;
+    /* Sharp white border */
     
     padding: 15px 30px;
     /* Add spacing inside button */
@@ -89,28 +93,31 @@ h1 {
     font-size: 1.1em;
     /* Make text bigger */
     
-    border-radius: 50px;
-    /* Round button edges */
-    
     cursor: pointer;
     /* Show pointer cursor when hovering */
     
     margin-bottom: 30px;
     /* Add space below the button */
     
-    transition: transform 0.2s;
+    transition: all 0.2s;
     /* Smooth animation when button is clicked */
+    
+    font-family: 'Courier New', monospace;
+    /* Match container font */
 }
 
 /* Style the button when hovering over it */
 .generate-btn:hover {
-    transform: scale(1.05);
-    /* Slightly enlarge button on hover */
+    background: #ffffff;
+    /* Invert colors on hover */
+    
+    color: #000000;
+    /* Black text on hover */
 }
 
 /* Style the button when it's clicked */
 .generate-btn:active {
-    transform: scale(0.95);
+    transform: scale(0.98);
     /* Slightly shrink button when clicked */
 }
 
@@ -143,39 +150,39 @@ h1 {
     height: auto;
     /* Keep image proportions correct */
     
-    border-radius: 15px;
-    /* Round image corners */
+    border: 3px solid #ffffff;
+    /* Sharp white border, no rounding */
     
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    /* Add subtle shadow to image */
-    
-    border: 3px solid #667eea;
-    /* Add purple border around image */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    /* Subtle white glow */
 }
 
 /* Style the card name heading */
 .card-name {
-    color: #333;
-    /* Dark gray color for text */
+    color: #ffffff;
+    /* White text */
     
     margin-bottom: 15px;
     /* Add space below name */
     
     font-size: 1.8em;
     /* Make name large */
+    
+    letter-spacing: 1px;
+    /* Add spacing between letters */
 }
 
 /* Style the card description */
 .card-description {
-    color: #666;
-    /* Medium gray color for text */
+    color: #cccccc;
+    /* Light gray color for text */
     
-    line-height: 1.6;
+    line-height: 1.8;
     /* Add space between lines of text */
     
-    font-size: 1em;
-    /* Normal font size */
+    font-size: 0.95em;
+    /* Slightly smaller font size */
     
-    font-style: italic;
-    /* Make text italic */
+    text-align: left;
+    /* Left-align for readability */
 }
