@@ -1,0 +1,181 @@
+/* CSS file for styling the tarot generator website */
+
+/* Set default styles for entire page */
+* {
+    margin: 0;
+    /* Remove default spacing around elements */
+    
+    padding: 0;
+    /* Remove default padding inside elements */
+    
+    box-sizing: border-box;
+    /* Include padding/border in width/height calculations */
+}
+
+/* Style the body/background */
+body {
+    font-family: 'Arial', sans-serif;
+    /* Set the font type for text */
+    
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Create a purple gradient background */
+    
+    min-height: 100vh;
+    /* Make background take up at least full screen height */
+    
+    display: flex;
+    /* Use flexbox for layout */
+    
+    justify-content: center;
+    /* Center content horizontally */
+    
+    align-items: center;
+    /* Center content vertically */
+    
+    padding: 20px;
+    /* Add spacing around edges */
+}
+
+/* Style the main container */
+.container {
+    background: white;
+    /* White background for the card */
+    
+    border-radius: 20px;
+    /* Round the corners */
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Add shadow for depth */
+    
+    padding: 40px;
+    /* Add space inside the container */
+    
+    max-width: 500px;
+    /* Limit container width */
+    
+    width: 100%;
+    /* Take up available width (responsive) */
+    
+    text-align: center;
+    /* Center all text */
+}
+
+/* Style the main title */
+h1 {
+    color: #667eea;
+    /* Purple color matching background */
+    
+    margin-bottom: 30px;
+    /* Add space below the title */
+    
+    font-size: 2.5em;
+    /* Large font size */
+}
+
+/* Style the generate button */
+.generate-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Same purple gradient as background */
+    
+    color: white;
+    /* White text color */
+    
+    border: none;
+    /* Remove default button border */
+    
+    padding: 15px 30px;
+    /* Add spacing inside button */
+    
+    font-size: 1.1em;
+    /* Make text bigger */
+    
+    border-radius: 50px;
+    /* Round button edges */
+    
+    cursor: pointer;
+    /* Show pointer cursor when hovering */
+    
+    margin-bottom: 30px;
+    /* Add space below the button */
+    
+    transition: transform 0.2s;
+    /* Smooth animation when button is clicked */
+}
+
+/* Style the button when hovering over it */
+.generate-btn:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge button on hover */
+}
+
+/* Style the button when it's clicked */
+.generate-btn:active {
+    transform: scale(0.95);
+    /* Slightly shrink button when clicked */
+}
+
+/* Style the card display container */
+.card-display {
+    margin-top: 30px;
+    /* Add space above card display */
+}
+
+/* Style the card image container */
+.card-image-container {
+    margin-bottom: 20px;
+    /* Add space below image */
+    
+    display: flex;
+    /* Use flexbox for layout */
+    
+    justify-content: center;
+    /* Center the image */
+}
+
+/* Style the card image */
+.card-image {
+    width: 100%;
+    /* Make image take up full container width */
+    
+    max-width: 300px;
+    /* Limit maximum image size */
+    
+    height: auto;
+    /* Keep image proportions correct */
+    
+    border-radius: 15px;
+    /* Round image corners */
+    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Add subtle shadow to image */
+    
+    border: 3px solid #667eea;
+    /* Add purple border around image */
+}
+
+/* Style the card name heading */
+.card-name {
+    color: #333;
+    /* Dark gray color for text */
+    
+    margin-bottom: 15px;
+    /* Add space below name */
+    
+    font-size: 1.8em;
+    /* Make name large */
+}
+
+/* Style the card description */
+.card-description {
+    color: #666;
+    /* Medium gray color for text */
+    
+    line-height: 1.6;
+    /* Add space between lines of text */
+    
+    font-size: 1em;
+    /* Normal font size */
+    
+    font-style: italic;
+    /* Make text italic */
+}

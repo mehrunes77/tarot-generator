@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- HTML5 document type declaration -->
+<html lang="en">
+<!-- Set language to English -->
+
+<head>
+    <!-- Metadata and linked resources -->
+    <meta charset="UTF-8">
+    <!-- Allow special characters and emojis -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Make the website responsive on mobile devices -->
+    
+    <title>Tarot Generator</title>
+    <!-- Title shown in browser tab -->
+    
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to external CSS file for styling -->
+</head>
+
+<body>
+    <!-- Main container for all visible content -->
+    
+    <div class="container">
+        <!-- Wrapper div for centering and styling -->
+        
+        <h1>✨ Tarot Generator ✨</h1>
+        <!-- Main title of the website -->
+        
+        <button id="generateBtn" class="generate-btn">
+            <!-- Button that triggers card generation when clicked -->
+            🔮 Generate Card
+        </button>
+        
+        <div class="card-display">
+            <!-- Container for the tarot card display -->
+            
+            <div class="card-image-container">
+                <!-- Container that holds the card image -->
+                <img id="cardImage" src="" alt="Tarot Card" class="card-image">
+                <!-- Image element where the tarot card will be displayed -->
+                <!-- Initially empty (src=""), will be filled by JavaScript -->
+            </div>
+            
+            <h2 id="cardName" class="card-name"></h2>
+            <!-- Heading that displays the name of the card -->
+            <!-- Initially empty, will be filled by JavaScript -->
+            
+            <p id="cardDescription" class="card-description"></p>
+            <!-- Paragraph that displays the description of the card -->
+            <!-- Initially empty, will be filled by JavaScript -->
+        </div>
+    </div>
+    
+    <script src="data.js"></script>
+    <!-- Link to JavaScript file containing tarot card data -->
+    
+    <script src="script.js"></script>
+    <!-- Link to JavaScript file containing the main functionality -->
+</body>
+
+</html>
